@@ -1,1 +1,7 @@
 /home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/AsReplacementApplication.java
+/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/ReplacementModel.java
+/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/entities/Teacher.java
+/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/entities/Replacement.java
+/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/entities/Lesson.java
+/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/controllers/ReplacementController.java
+/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/LessonModel.java

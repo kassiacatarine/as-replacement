@@ -1,1 +1,12 @@
+br/edu/utfpr/asreplacement/entities/Lesson.class
+br/edu/utfpr/asreplacement/entities/Replacement$ReplacementBuilder.class
+br/edu/utfpr/asreplacement/entities/Lesson$LessonBuilder.class
+br/edu/utfpr/asreplacement/entities/Teacher.class
+br/edu/utfpr/asreplacement/viewmodels/LessonModel$LessonModelBuilder.class
+br/edu/utfpr/asreplacement/viewmodels/ReplacementModel.class
+br/edu/utfpr/asreplacement/viewmodels/LessonModel.class
 br/edu/utfpr/asreplacement/AsReplacementApplication.class
+br/edu/utfpr/asreplacement/controllers/ReplacementController.class
+br/edu/utfpr/asreplacement/viewmodels/ReplacementModel$ReplacementModelBuilder.class
+br/edu/utfpr/asreplacement/entities/Teacher$TeacherBuilder.class
+br/edu/utfpr/asreplacement/entities/Replacement.class
