@@ -28,18 +28,18 @@ public class ReplacementController {
                 AulaListModel[].class);
 
         DocenteModel arrayDocentes[] = new Gson().fromJson(
-                Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(),                
-                //Unirest.get("http://localhost:8081/servico/docentes").asJson().getBody().toString(),
+                //Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(),                
+                Unirest.get("http://localhost:8081/servico/docentes").asJson().getBody().toString(),
                 DocenteModel[].class);
 
         ReplacementModel arraySubstituicoes[] = new Gson().fromJson(
-                Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(),                
-                //Unirest.get("http://localhost:8081/servico/substituicoes").asJson().getBody().toString(),
+                //Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(),                
+                Unirest.get("http://localhost:8081/servico/plano").asJson().getBody().toString(),
                 ReplacementModel[].class);
 
         data.addAttribute("aulas", arrayAulas);
         data.addAttribute("docentes", arrayDocentes);
-        data.addAttribute("substituicoes", arraySubstituicoes);
+        data.addAttribute("planos", arraySubstituicoes);
 
         return "replacement-view";
     }
@@ -47,7 +47,7 @@ public class ReplacementController {
     @PostMapping ("/replacement/new")
     public String criar(ReplacementModel pais) throws UnirestException {
 
-            Unirest.post("http://localhost:8081/replacement")
+            Unirest.post("http://localhost:8081/servico/plano")
                 .header("Content-type", "application/json")
                 .header("accept", "application/json")
                 .body(new Gson().toJson(pais, ReplacementModel.class))
