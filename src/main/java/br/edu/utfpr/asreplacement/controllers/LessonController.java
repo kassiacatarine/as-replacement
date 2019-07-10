@@ -47,12 +47,14 @@ public class LessonController {
         System.out.println(new Gson().toJson(aula, AulaModel.class));
 
         HttpResponse<JsonNode> response = Unirest.post("http://localhost:8081/servico/aulas")
-            .header("Accept", "application/json")    
+            .header("Accept", "application/json")
             .header("Content-Type", "application/json")
             .body(new Gson().toJson(aula, AulaModel.class))
             .asJson();
 
-        return "redirect:/lesson";
+        System.out.println(response.getStatusText());
+
+        return "";
     }
 
     @GetMapping("/lesson/delete")

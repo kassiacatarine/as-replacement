@@ -1,5 +1,7 @@
 br/edu/utfpr/asreplacement/viewmodels/TurmaModel.class
 br/edu/utfpr/asreplacement/viewmodels/ReplacementModel.class
+br/edu/utfpr/asreplacement/CorsConfig$1.class
+br/edu/utfpr/asreplacement/CorsConfig.class
 br/edu/utfpr/asreplacement/viewmodels/AulaModel$AulaModelBuilder.class
 br/edu/utfpr/asreplacement/viewmodels/AulaListModel$AulaListModelBuilder.class
 br/edu/utfpr/asreplacement/controllers/LessonController.class
