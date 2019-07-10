@@ -1,7 +1,9 @@
-/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/AsReplacementApplication.java
-/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/ReplacementModel.java
-/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/entities/Teacher.java
-/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/entities/Replacement.java
-/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/entities/Lesson.java
-/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/controllers/ReplacementController.java
-/home/utfpr/kassia/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/LessonModel.java
+/home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/entities/Person.java
+/home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/AulaModel.java
+/home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/entities/Lesson.java
+/home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/ReplacementModel.java
+/home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/AsReplacementApplication.java
+/home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/entities/Replacement.java
+/home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/entities/Teacher.java
+/home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/controllers/ReplacementController.java
+/home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/controllers/LessonController.java

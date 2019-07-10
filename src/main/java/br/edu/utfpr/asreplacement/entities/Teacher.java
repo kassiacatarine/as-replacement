@@ -15,8 +15,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
-public class Teacher {
-    private Long id;
-    private String name;
-    
+public class Teacher extends Person {
+    private boolean active;
 }

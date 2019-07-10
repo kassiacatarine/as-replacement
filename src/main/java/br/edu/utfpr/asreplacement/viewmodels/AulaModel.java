@@ -1,18 +1,23 @@
 package br.edu.utfpr.asreplacement.viewmodels;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * LessonModel
+ * AulaModel
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LessonModel {
-
+public class AulaModel {
     private Long id;
+    private String titulo;
+    private Date data;
+    private int aulas;
+    private int turmaId;
 }
