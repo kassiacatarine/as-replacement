@@ -2,6 +2,7 @@
 /home/utfpr/works/as-replacement/src/main/java/br/edu/utfpr/asreplacement/controllers/LessonController.java
 /home/utfpr/works/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/AulaListModel.java
 /home/utfpr/works/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/ReplacementModel.java
+/home/utfpr/works/as-replacement/src/main/java/br/edu/utfpr/asreplacement/CorsConfig.java
 /home/utfpr/works/as-replacement/src/main/java/br/edu/utfpr/asreplacement/controllers/ReplacementController.java
 /home/utfpr/works/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/TurmaModel.java
 /home/utfpr/works/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/AulaModel.java
