@@ -5,16 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * ReplacementModel
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ReplacementModel {
-
+public class DocenteModel {
     private Long id;
-    private Long aulaId;
-    private Long docenteId;
+    private String nome;
+    private String documentoDocente;
 }
