@@ -70,10 +70,10 @@
                 <td>${aula.titulo}</td>
                 <td>${aula.data}</td>
                 <td>${aula.aulas}</td>
-                <td>${aula.turma}</td>
+                <td>${aula.turmaNome}</td>
                 <td>
-                  <a href="/aulas/prepara-alterar?id=${pais.id}">Alterar</a>
-                  <a href="/aulas/excluir?id=${pais.id}">Excluir</a>
+                  <a href="/aulas/prepara-alterar?id=${aula.id}">Alterar</a>
+                  <a href="/aulas/excluir?id=${aula.id}">Excluir</a>
                 </td>
               </tr>
             </#list>

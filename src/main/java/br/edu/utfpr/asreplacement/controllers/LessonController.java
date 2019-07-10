@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import br.edu.utfpr.asreplacement.viewmodels.AulaListModel;
 import br.edu.utfpr.asreplacement.viewmodels.AulaModel;
 import br.edu.utfpr.asreplacement.viewmodels.TurmaModel;
 
@@ -23,8 +24,9 @@ public class LessonController {
     @GetMapping("/lesson")
     public String inicial(Model data) throws JsonSyntaxException, UnirestException {
 
-        AulaModel arrayAulas[] = new Gson().fromJson(
-                Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(), AulaModel[].class);
+        AulaListModel arrayAulas[] = new Gson().fromJson(
+                Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(),
+                AulaListModel[].class);
 
         data.addAttribute("aulas", arrayAulas);
 
@@ -37,10 +39,10 @@ public class LessonController {
     }
 
     @PostMapping("/lesson/new")
-    public String criar(AulaModel pais) throws UnirestException {
+    public String criar(AulaModel aula) throws UnirestException {
 
         Unirest.post("http://localhost:8081/servico/aulas").header("Content-type", "application/json")
-                .header("accept", "application/json").body(new Gson().toJson(pais, AulaModel.class)).asJson();
+                .header("accept", "application/json").body(new Gson().toJson(aula, AulaModel.class)).asJson();
 
         return "redirect:/lesson";
     }
