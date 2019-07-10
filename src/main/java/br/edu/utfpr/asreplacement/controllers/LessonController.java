@@ -47,10 +47,8 @@ public class LessonController {
         System.out.println(new Gson().toJson(aula, AulaModel.class));
 
         HttpResponse<JsonNode> response = Unirest.post("http://localhost:8081/servico/aulas")
-            .header("Accept", "application/json")
-            .header("Content-Type", "application/json")
-            .body(new Gson().toJson(aula, AulaModel.class))
-            .asJson();
+                .header("Accept", "application/json").header("Content-Type", "application/json")
+                .body(new Gson().toJson(aula, AulaModel.class)).asJson();
 
         System.out.println(response.getStatusText());
 
@@ -65,28 +63,34 @@ public class LessonController {
     }
 
     // @GetMapping("/pais/prepara-alterar")
-    // public String preparaAlterar(@RequestParam int id, Model data) throws JsonSyntaxException, UnirestException {
+    // public String preparaAlterar(@RequestParam int id, Model data) throws
+    // JsonSyntaxException, UnirestException {
 
-    //     AulaModel aulaExistente = new Gson().fromJson(Unirest.get("http://localhost:8081/servico/aulas/{id}")
-    //             .routeParam("id", String.valueOf(id)).asJson().getBody().toString(), AulaModel.class);
+    // AulaModel aulaExistente = new
+    // Gson().fromJson(Unirest.get("http://localhost:8081/servico/aulas/{id}")
+    // .routeParam("id", String.valueOf(id)).asJson().getBody().toString(),
+    // AulaModel.class);
 
-    //     data.addAttribute("paisAtual", aulaExistente);
+    // data.addAttribute("paisAtual", aulaExistente);
 
-    //     AulaModel arrayAulas[] = new Gson().fromJson(
-    //             Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(), AulaModel[].class);
+    // AulaModel arrayAulas[] = new Gson().fromJson(
+    // Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(),
+    // AulaModel[].class);
 
-    //     data.addAttribute("aulas", arrayAulas);
+    // data.addAttribute("aulas", arrayAulas);
 
-    //     return "pais-view-alterar";
+    // return "pais-view-alterar";
     // }
 
     // @PostMapping("/lesson/alterar")
     // public String alterar(AulaModel aulaAlterado) throws UnirestException {
 
-    //     Unirest.put("http://localhost:8081/servico/aulas/{id}").routeParam("id", String.valueOf(aulaAlterado.getId()))
-    //             .header("Content-type", "application/json").header("accept", "application/json")
-    //             .body(new Gson().toJson(aulaAlterado, AulaModel.class)).asJson();
+    // Unirest.put("http://localhost:8081/servico/aulas/{id}").routeParam("id",
+    // String.valueOf(aulaAlterado.getId()))
+    // .header("Content-type", "application/json").header("accept",
+    // "application/json")
+    // .body(new Gson().toJson(aulaAlterado, AulaModel.class)).asJson();
 
-    //     return "redirect:/lesson";
+    // return "redirect:/lesson";
     // }
 }

@@ -19,7 +19,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <form action="/lesson/new" method="post">
+        <form action="/lesson/new" method="POST">
           <div class="form-group">
             <label for="titulo">Título:</label>
             <input name="titulo" type="text" class="form-control" id="titulo" required>
