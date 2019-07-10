@@ -22,14 +22,12 @@
         <form action="/lesson/new" method="post">
           <div class="form-group">
             <label for="titulo">Título:</label>
-            <input value="${(lessonAtual.titulo)!}" name="titulo" type="text" class="form-control" id="titulo" required>
+            <input name="titulo" type="text" class="form-control" id="titulo" required>
           </div>
           <div class="form-group">
             <label for="data-pagamento">Data:</label>
-            <!-- Datepicker as text field -->
             <div class="input-group date" data-date-format="dd/mm/yyyy">
-              <input value="${(lessonAtual.data)!}" name="data" id="data" type="text" class="form-control"
-                placeholder="dd/mm/yyyy" required>
+              <input name="data" id="data" type="text" class="form-control" placeholder="dd/mm/yyyy" required>
               <div class="input-group-addon">
                 <span class="glyphicon glyphicon-th"></span>
               </div>
@@ -37,7 +35,7 @@
           </div>
           <div class="form-group">
             <label for="aulas">Quantidade de aulas diarias:</label>
-            <input value="${(lessonAtual.aulas)!}" name="aulas" type="number" class="form-control" id="aulas" required>
+            <input name="aulas" type="number" class="form-control" id="aulas" required>
           </div>
           <div class="form-group">
             <label for="turma">Turma:</label>
@@ -68,12 +66,12 @@
             <#list aulas as aula>
               <tr>
                 <td>${aula.titulo}</td>
-                <td>${aula.data}</td>
+                <td>${(aula.data?date?string("dd/MM/yyyy"))!}</td>
                 <td>${aula.aulas}</td>
                 <td>${aula.turmaNome}</td>
                 <td>
                   <a href="/aulas/prepara-alterar?id=${aula.id}">Alterar</a>
-                  <a href="/aulas/excluir?id=${aula.id}">Excluir</a>
+                  <a href="/lesson/delete?id=${aula.id}">Excluir</a>
                 </td>
               </tr>
             </#list>
