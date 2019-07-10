@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Gerencia Pais</title>
+  <title>Gerencia Aula</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -24,29 +24,29 @@
             <label for="titulo">Título:</label>
             <input value="${(lessonAtual.titulo)!}" name="titulo" type="text" class="form-control" id="titulo" required>
           </div>
-          <div class='col-md-3'>
-            <div class="form-group">
-              <label for="data-pagamento">Data:</label>
-              <!-- Datepicker as text field -->
-              <div class="input-group date" data-date-format="dd/mm/yyyy">
-                <input value="${(lessonAtual.data)!}" name="data" id="data" type="text" class="form-control"
-                  placeholder="dd/mm/yyyy" required>
-                <div class="input-group-addon">
-                  <span class="glyphicon glyphicon-th"></span>
-                </div>
+          <div class="form-group">
+            <label for="data-pagamento">Data:</label>
+            <!-- Datepicker as text field -->
+            <div class="input-group date" data-date-format="dd/mm/yyyy">
+              <input value="${(lessonAtual.data)!}" name="data" id="data" type="text" class="form-control"
+                placeholder="dd/mm/yyyy" required>
+              <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <label for="aulas">Quantidade de aulas:</label>
-            <input value="${(lessonAtual.aulas)!}" name="aulas" type="number" class="form-control" id="aulas">
+            <label for="aulas">Quantidade de aulas diarias:</label>
+            <input value="${(lessonAtual.aulas)!}" name="aulas" type="number" class="form-control" id="aulas" required>
           </div>
-          <select name="turma" id="turma" class="custom-select">
-            <option value="1">Turma 1</option>
-            <option value="2">Turma 2</option>
-            <option value="3">Turma 3</option>
-          </select>
-
+          <div class="form-group">
+            <label for="turma">Turma:</label>
+            <select name="turmaId" id="turma" class="form-control" required>
+              <#list turmas as turma>
+                <option value="${turma.id}">${turma.codigo} - ${turma.disciplinaNome}</option>
+              </#list>
+            </select>
+          </div>
           <button type="submit" class="btn btn-primary">Criar</button>
         </form>
 
@@ -65,15 +65,15 @@
             </tr>
           </thead>
           <tbody>
-            <#list lessons as lesson>
+            <#list aulas as aula>
               <tr>
-                <td>${lesson.titulo}</td>
-                <td>${lesson.data}</td>
-                <td>${lesson.aulas}</td>
-                <td>${lesson.turma}</td>
+                <td>${aula.titulo}</td>
+                <td>${aula.data}</td>
+                <td>${aula.aulas}</td>
+                <td>${aula.turma}</td>
                 <td>
-                  <a href="/lesson/prepara-alterar?id=${pais.id}">Alterar</a>
-                  <a href="/lesson/excluir?id=${pais.id}">Excluir</a>
+                  <a href="/aulas/prepara-alterar?id=${pais.id}">Alterar</a>
+                  <a href="/aulas/excluir?id=${pais.id}">Excluir</a>
                 </td>
               </tr>
             </#list>

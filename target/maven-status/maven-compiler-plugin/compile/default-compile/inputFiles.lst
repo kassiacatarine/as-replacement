@@ -1,5 +1,6 @@
 /home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/entities/Person.java
 /home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/AulaModel.java
+/home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/TurmaModel.java
 /home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/entities/Lesson.java
 /home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/viewmodels/ReplacementModel.java
 /home/akira/works/as/as-replacement/src/main/java/br/edu/utfpr/asreplacement/AsReplacementApplication.java

@@ -1,3 +1,4 @@
+br/edu/utfpr/asreplacement/viewmodels/TurmaModel.class
 br/edu/utfpr/asreplacement/entities/Lesson.class
 br/edu/utfpr/asreplacement/entities/Replacement$ReplacementBuilder.class
 br/edu/utfpr/asreplacement/entities/Lesson$LessonBuilder.class
@@ -7,6 +8,7 @@ br/edu/utfpr/asreplacement/viewmodels/AulaModel$AulaModelBuilder.class
 br/edu/utfpr/asreplacement/controllers/LessonController.class
 br/edu/utfpr/asreplacement/AsReplacementApplication.class
 br/edu/utfpr/asreplacement/viewmodels/AulaModel.class
+br/edu/utfpr/asreplacement/viewmodels/TurmaModel$TurmaModelBuilder.class
 br/edu/utfpr/asreplacement/viewmodels/ReplacementModel$ReplacementModelBuilder.class
 br/edu/utfpr/asreplacement/controllers/ReplacementController.class
 br/edu/utfpr/asreplacement/entities/Teacher$TeacherBuilder.class
