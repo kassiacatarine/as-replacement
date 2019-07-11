@@ -22,12 +22,12 @@
         <form action="/lesson/new" method="post">
           <div class="form-group">
             <label for="titulo">Título:</label>
-            <input name="titulo" type="text" class="form-control" id="titulo" required>
+            <input value="${(lessonAtual.titulo)!}" name="titulo" type="text" class="form-control" id="titulo" required>
           </div>
           <div class="form-group">
             <label for="data-pagamento">Data:</label>
             <div class="input-group date" data-date-format="dd/mm/yyyy">
-              <input name="data" id="data" type="text" class="form-control" placeholder="dd/mm/yyyy" required>
+              <input value="${(lessonAtual.data?date?string("dd/MM/yyyy"))!}" name="data" id="data" type="text" class="form-control" placeholder="dd/mm/yyyy" required>
               <div class="input-group-addon">
                 <span class="glyphicon glyphicon-th"></span>
               </div>
@@ -35,7 +35,7 @@
           </div>
           <div class="form-group">
             <label for="aulas">Quantidade de aulas diarias:</label>
-            <input name="aulas" type="number" class="form-control" id="aulas" required>
+            <input value="${(lessonAtual.aulas)!}" name="aulas" type="number" class="form-control" id="aulas" required>
           </div>
           <div class="form-group">
             <label for="turma">Turma:</label>
@@ -70,7 +70,7 @@
                 <td>${aula.aulas}</td>
                 <td>${aula.turmaNome}</td>
                 <td>
-                  <a href="/aulas/prepara-alterar?id=${aula.id}">Alterar</a>
+                  <a href="/lesson/prepara-alterar?id=${aula.id}">Alterar</a>
                   <a href="/lesson/delete?id=${aula.id}">Excluir</a>
                 </td>
               </tr>
