@@ -29,13 +29,11 @@ public class ReplacementController {
                 AulaListModel[].class);
 
         DocenteModel arrayDocentes[] = new Gson().fromJson(
-                //Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(),                
                 Unirest.get("http://localhost:8081/servico/docentes").asJson().getBody().toString(),
                 DocenteModel[].class);
 
         ReplacementModel arraySubstituicoes[] = new Gson().fromJson(
-                Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(),                
-                //Unirest.get("http://localhost:8081/servico/plano").asJson().getBody().toString(),
+                Unirest.get("http://localhost:8081/servico/plano").asJson().getBody().toString(),
                 ReplacementModel[].class);
 
         data.addAttribute("aulas", arrayAulas);
@@ -46,18 +44,28 @@ public class ReplacementController {
     }
 
     @PostMapping ("/replacement/new")
-    public String criar(ReplacementModel plano) throws UnirestException {
+    public String criar(ReplacementModel plano, @RequestParam String aulaId, @RequestParam String requerenteId) throws UnirestException {
 
-        if(plano.getAulaId() == -1 || plano.getDocenteId() == -1){
-            return "";
-        }
+        AulaModel aula = new AulaModel();
+        Long aId = Long.parseLong(aulaId.replace(",", ""));
+        System.out.println(aId);
+        aula.setId(aId);
 
-            Unirest.post("http://localhost:8081/servico/plano")
-                .header("Content-type", "application/json")
-                .header("accept", "application/json")
-                .body(new Gson().toJson(plano, ReplacementModel.class))
-                .asJson();
-        return "redirect:/replacement";
+        DocenteModel requerente = new DocenteModel();
+        Long rId = Long.parseLong(requerenteId.replace(",", ""));
+        System.out.println(rId);
+        requerente.setId(rId);
+
+        plano.setAula(aula);
+        plano.setRequerente(requerente);
+
+        Unirest.post("http://localhost:8081/servico/plano")
+            .header("Content-type", "application/json")
+            .header("accept", "application/json")
+            .body(new Gson().toJson(plano, ReplacementModel.class))
+            .asJson();
+        return "";
+        //return "redirect:/replacement";
     }
 
 
@@ -67,6 +75,13 @@ public class ReplacementController {
             Unirest.put("http://localhost:8081/servico/plano/aprovar/{id}")
                 .routeParam("id", id.replace(".", ""))
                 .asJson();
+
+        return "redirect:/replacement";
+    }
+
+    @GetMapping("/replacement/delete")
+    public String excluir(@RequestParam String id) throws UnirestException {
+        Unirest.delete("http://localhost:8081/servico/plano/{id}").routeParam("id", id.replace(".", "")).asJson();
 
         return "redirect:/replacement";
     }

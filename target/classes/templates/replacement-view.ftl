@@ -39,7 +39,7 @@
           </div>
           <div class="form-group">
               <label for="teacherSelect">Docente</label>
-              <select name="docenteId" class="form-control" id="teacherSelect" required>
+              <select name="requerenteId" class="form-control" id="teacherSelect" required>
                 <option disabled selected value>Nenhum</option>
                 <#list docentes as docente>
                     <option value="${docente.id}">${docente.nome} (${docente.documentoDocente})</option>
@@ -61,17 +61,22 @@
               <thead class="thead-dark">
                   <tr>
                       <th>Aula</th>
-                      <th>Docente</th>
+                      <th>Requerente</th>
+                      <th>Justificativa</th>
                       <th>Ações</th>
                   </tr>
               </thead>
               <tbody>
                   <#list planos as plano>
                       <tr>
-                          <td>${plano.aula.titulo}</td>
-                          <td>${plano.docente.nome}</td>
+                          <td>${(plano.aula.titulo)!}</td>
+                          <td>${(plano.requerente.nome)!}</td>
+                          <td>${(plano.justificativa)!}</td>
                           <td>
+                            <#if !plano.aprovado>
                               <a href="/replacement/aprove?id=${plano.id}">Aprovar</a>
+                            </#if>
+                            <a href="/replacement/delete?id=${plano.id}">Excluir</a>
                           </td>
                       </tr>        
                   </#list>

@@ -15,9 +15,7 @@ import lombok.NoArgsConstructor;
 public class ReplacementModel {
 
     private Long id;
-    private Long aulaId;
-    private Long docenteId;
     private DocenteModel requerente;
-    private AulaListModel aula;
+    private AulaModel aula;
     private boolean aprovado;
 }
