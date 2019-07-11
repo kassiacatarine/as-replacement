@@ -63,7 +63,7 @@ public class LessonController {
         HttpResponse<JsonNode> response = Unirest.get("http://localhost:8081/servico/aulas/{id}")
                 .routeParam("id", id.replace(".", "")).asJson();
 
-        AulaModel aulaExistente = new Gson().fromJson(response.getBody(), AulaModel.class);
+        AulaModel aulaExistente = new Gson().fromJson(response.getBody().toString(), AulaModel.class);
 
         data.addAttribute("aulaAtual", aulaExistente);
 
