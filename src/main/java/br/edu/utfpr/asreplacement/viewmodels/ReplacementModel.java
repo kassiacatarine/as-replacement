@@ -17,4 +17,7 @@ public class ReplacementModel {
     private Long id;
     private Long aulaId;
     private Long docenteId;
+    private DocenteModel requerente;
+    private AulaListModel aula;
+    private boolean aprovado;
 }

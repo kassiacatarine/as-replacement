@@ -46,14 +46,17 @@ public class ReplacementController {
     }
 
     @PostMapping ("/replacement/new")
-    public String criar(ReplacementModel pais) throws UnirestException {
+    public String criar(ReplacementModel plano) throws UnirestException {
+
+        if(plano.getAulaId() == -1 || plano.getDocenteId() == -1){
+            return "";
+        }
 
             Unirest.post("http://localhost:8081/servico/plano")
                 .header("Content-type", "application/json")
                 .header("accept", "application/json")
-                .body(new Gson().toJson(pais, ReplacementModel.class))
+                .body(new Gson().toJson(plano, ReplacementModel.class))
                 .asJson();
-
         return "redirect:/replacement";
     }
 
@@ -61,7 +64,7 @@ public class ReplacementController {
     @PostMapping ("/replacement/aprove")
     public String criar(@RequestParam String id) throws UnirestException {
 
-            Unirest.post("http://localhost:8081/servico/plano/aprovar/{id}")
+            Unirest.put("http://localhost:8081/servico/plano/aprovar/{id}")
                 .routeParam("id", id.replace(".", ""))
                 .asJson();
 

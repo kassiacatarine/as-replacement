@@ -30,8 +30,8 @@
         <form action="/replacement/new" method="post">
           <div class="form-group">
               <label for="classSelect">Aula</label>
-              <select name="aulaId" class="form-control" id="classSelect">
-                <option value="-1">Nenhum</option>
+              <select name="aulaId" class="form-control" id="classSelect" required>
+                <option disabled selected value>Nenhum</option>
                 <#list aulas as aula>
                     <option value="${aula.id}">${aula.titulo} - ${aula.titulo} (${aula.aulas} aulas)</option>
                 </#list>
@@ -39,12 +39,16 @@
           </div>
           <div class="form-group">
               <label for="teacherSelect">Docente</label>
-              <select name="docenteId" class="form-control" id="teacherSelect">
-                <option value="-1">Nenhum</option>
+              <select name="docenteId" class="form-control" id="teacherSelect" required>
+                <option disabled selected value>Nenhum</option>
                 <#list docentes as docente>
                     <option value="${docente.id}">${docente.nome} (${docente.documentoDocente})</option>
                 </#list>
               </select>
+          </div>
+          <div class="form-group">
+              <label for="classSelect">Justificativa</label>
+              <input name="justificativa" class="form-control" id="classSelect" type="text" required/>
           </div>
           <button type="submit" class="btn btn-primary">Salvar</button>
         </form>
