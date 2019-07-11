@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.utfpr.asreplacement.viewmodels.ReplacementModel;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * ReplacementController
@@ -33,8 +34,8 @@ public class ReplacementController {
                 DocenteModel[].class);
 
         ReplacementModel arraySubstituicoes[] = new Gson().fromJson(
-                //Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(),                
-                Unirest.get("http://localhost:8081/servico/plano").asJson().getBody().toString(),
+                Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(),                
+                //Unirest.get("http://localhost:8081/servico/plano").asJson().getBody().toString(),
                 ReplacementModel[].class);
 
         data.addAttribute("aulas", arrayAulas);
@@ -56,5 +57,14 @@ public class ReplacementController {
         return "redirect:/replacement";
     }
 
-    
+
+    @PostMapping ("/replacement/aprove")
+    public String criar(@RequestParam String id) throws UnirestException {
+
+            Unirest.post("http://localhost:8081/servico/plano/aprovar/{id}")
+                .routeParam("id", id.replace(".", ""))
+                .asJson();
+
+        return "redirect:/replacement";
+    }
 }

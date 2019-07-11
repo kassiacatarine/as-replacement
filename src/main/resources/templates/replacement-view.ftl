@@ -62,12 +62,12 @@
                   </tr>
               </thead>
               <tbody>
-                  <#list substituicoes as substituicao>
+                  <#list planos as plano>
                       <tr>
-                          <td>${substituicao.id}</td>
-                          <td>${substituicao.id}</td>
+                          <td>${plano.aula.titulo}</td>
+                          <td>${plano.docente.nome}</td>
                           <td>
-                              <a href="/?id=${substituicao.id}">Aprovar</a>
+                              <a href="/replacement/aprove?id=${plano.id}">Aprovar</a>
                           </td>
                       </tr>        
                   </#list>
