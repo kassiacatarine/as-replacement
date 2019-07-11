@@ -45,10 +45,8 @@ public class LessonController {
     @PostMapping("/lesson/new")
     public String criar(AulaModel aula) throws UnirestException {
         HttpResponse<JsonNode> response = Unirest.post("http://localhost:8081/servico/aulas")
-            .header("Accept", "application/json")
-            .header("Content-Type", "application/json")
-            .body(new Gson().toJson(aula, AulaModel.class))
-            .asJson();
+                .header("Accept", "application/json").header("Content-Type", "application/json")
+                .body(new Gson().toJson(aula, AulaModel.class)).asJson();
         return "redirect:/lesson";
     }
 
@@ -62,10 +60,12 @@ public class LessonController {
     @GetMapping("/lesson/prepara-alterar")
     public String preparaAlterar(@RequestParam String id, Model data) throws JsonSyntaxException, UnirestException {
 
-        AulaModel aulaExistente = new Gson().fromJson(Unirest.get("http://localhost:8081/servico/aulas/{id}")
-                .routeParam("id", id.replace(".", "")).asJson().getBody().toString(), AulaModel.class);
+        HttpResponse<JsonNode> response = Unirest.get("http://localhost:8081/servico/aulas/{id}")
+                .routeParam("id", id.replace(".", "")).asJson();
 
-        data.addAttribute("lessonAtual", aulaExistente);
+        AulaModel aulaExistente = new Gson().fromJson(response.getBody(), AulaModel.class);
+
+        data.addAttribute("aulaAtual", aulaExistente);
 
         AulaListModel arrayAulas[] = new Gson().fromJson(
                 Unirest.get("http://localhost:8081/servico/aulas").asJson().getBody().toString(),
